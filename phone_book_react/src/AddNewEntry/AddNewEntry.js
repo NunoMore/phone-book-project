@@ -38,6 +38,13 @@ class AddNewEntry extends PureComponent {
     }
 
     updatePhoneNumberValue = (inputEvent) => {
+
+        // phone number must be unique
+        // const isUnique = phoneBookList.find(entry => entry.phoneNumber === inputEvent.target.value) ? false : true;
+
+        // must be of a specific format "+xxx xx xxxxxx"
+        // const isRightFormat = inputEvent.target.value.includes('+');
+
         let { newEntry } = this.state;
         newEntry.phoneNumber = inputEvent.target.value;
         if (newEntry.firstName && newEntry.firstName !== ""
@@ -49,7 +56,7 @@ class AddNewEntry extends PureComponent {
     }
 
     render() {
-        const { homePageRenderer } = this.props;
+        const { homePageRenderer, phoneBookList } = this.props;
         const { newEntry, buttonText } = this.state;
 
         return (
@@ -77,7 +84,8 @@ class AddNewEntry extends PureComponent {
                     id="phoneNumber"
                     type="text"
                     placeholder={newEntry.phoneNumber}
-                    onKeyUp={this.updatePhoneNumberValue}
+                    onKeyUp={() => this.updatePhoneNumberValue()}
+                    // onKeyUp={() => this.updatePhoneNumberValue(phoneBookList)}
                 />
                 <br />
                 <br />

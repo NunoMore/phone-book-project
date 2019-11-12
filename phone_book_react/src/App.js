@@ -15,11 +15,12 @@ class App extends PureComponent {
       renderEditEntry: false,
       hasChanges: false,
       oldEntry: null,
+      phoneBookList: [],
     };
   }
 
-  addNewEntryRenderer = () => {
-    this.setState({ renderHomePage: false, renderEditEntry: false, renderAddNewEntry: true });
+  addNewEntryRenderer = (phoneBookList) => {
+    this.setState({ renderHomePage: false, renderEditEntry: false, renderAddNewEntry: true, phoneBookList: phoneBookList });
   }
 
   editEntryRenderer = (entry) => {
@@ -73,6 +74,7 @@ class App extends PureComponent {
       renderEditEntry,
       hasChanges,
       oldEntry,
+      phoneBookList,
     } = this.state;
 
     return (
@@ -108,6 +110,7 @@ class App extends PureComponent {
 
               renderAddNewEntry &&
               <AddNewEntry
+                phoneBookList={phoneBookList}
                 homePageRenderer={this.homePageRenderer}
               />
             )
