@@ -12,4 +12,4 @@ The configurations for the database connection are in the ".env" file in the roo
 
 The program is supposed to get the data from the database and execute a CRUD app. Meaning, the user can create, read, update and delete entries from the database.
 
-The program still has bugs to solve...
+The program is complete without the input validations
