@@ -18,7 +18,7 @@ class HomePage extends PureComponent {
     getPhoneBookList = () => {
         NodeApi.readEntries()
             .then((phoneBookList) => {
-                if (phoneBookList && phoneBookList.length !== 0)
+                // if (phoneBookList && phoneBookList.length !== 0)
                     this.setState({ phoneBookList: phoneBookList });
             });
     }
@@ -41,11 +41,11 @@ class HomePage extends PureComponent {
     }
 
     render() {
-        const { phoneBookList, phoneBookFilteredList } = this.state;
-        const { editEntryRenderer, addNewEntryRenderer, hasChanges } = this.props;
-
+        const { phoneBookFilteredList } = this.state;
+        const { editEntryRenderer, addNewEntryRenderer } = this.props;
+        debugger;
         // get data from db only when list is empty or hasChanges
-        hasChanges || (phoneBookList && phoneBookList.length === 0 && this.getPhoneBookList());
+            this.getPhoneBookList();
         return (
             <div>
                 <input

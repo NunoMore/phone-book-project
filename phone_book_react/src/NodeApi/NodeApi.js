@@ -12,7 +12,6 @@ class NodeApi {
             "?firstName=" + newEntry.firstName +
             "&lastName=" + newEntry.lastName +
             "&number=" + newEntry.phoneNumber;
-        debugger;
         return this.fetchData(url);
     }
 
@@ -22,7 +21,6 @@ class NodeApi {
             "&lastName=" + newEntry.lastName +
             "&number=" + newEntry.phoneNumber +
             "&nameId=" + newEntry.nameId;
-        debugger;
         return this.fetchData(url);
     }
 
@@ -65,7 +63,6 @@ class NodeApi {
                 parsedObj.phoneNumber = dataElement.number;
             parsedObjs.push(parsedObj);
         });
-        debugger;
         return parsedObjs;
     }
 }
