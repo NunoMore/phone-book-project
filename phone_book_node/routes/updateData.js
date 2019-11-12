@@ -32,11 +32,3 @@ Router.get("/", (req, res) => {
 })
 
 module.exports = Router;
-
-
-
-// INSERT INTO names (first_name, last_name)
-// VALUES ('Miguel', 'Fernandes');
-
-// INSERT INTO phonenumbers (name_id, number)
-// VALUES ((	select id from names where first_name = 'Nuno'	), '+351 96 7595497');

@@ -16,8 +16,7 @@ Router.get("/", (req, res) => {
     mysqlConnection.query(queryGetId + ";", (err, rows, fields) => {
         if (!err) {
             var query = "";
-
-            if (rows === []) // insert in names table 
+            if (rows.length === 0) // insert in names table 
                 query = " INSERT INTO names (first_name, last_name) " +
                     " VALUES ('" + firstName + "', '" + lastName + "'); ";
 
