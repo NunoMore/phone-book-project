@@ -80,6 +80,9 @@ class Addentry extends PureComponent {
                 <Button onClick={() => homePageRenderer({ entry: entry, toEdit: true })}>
                     {buttonText}
                 </Button>
+                <Button onClick={() => homePageRenderer({ entry: entry, toDelete: true })}>
+                    {"DELETE"}
+                </Button>
             </div>
         );
     }

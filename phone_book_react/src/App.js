@@ -31,7 +31,7 @@ class App extends PureComponent {
 
     if (toDelete) {
       hasChanges = true;
-      NodeApi.deleteEntry(entry.number)
+      NodeApi.deleteEntry(entry.phoneNumber)
         .then((resultObj) => {
           if (resultObj.success) { console.log("entry deleted") } // toastr stating success
           else { console.log("entry not deleted with error: " + resultObj.sqlMessage) } // toastr stating failed and possibly the sql message associated
