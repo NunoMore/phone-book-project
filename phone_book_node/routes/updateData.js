@@ -19,7 +19,7 @@ Router.get("/", (req, res) => {
         " UPDATE phonenumbers " +
         " SET number = '" + newNumber + "'" +
         " WHERE name_id = " + nameId +
-        " AND number = " + oldNumber + "; ";
+        " AND number = '" + oldNumber + "'; ";
 
     mysqlConnection.query(query, (err, rows, fields) => {
         if (!err) {
