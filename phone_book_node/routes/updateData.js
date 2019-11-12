@@ -8,7 +8,8 @@ Router.get("/", (req, res) => {
 
     const firstName = req.query.firstName;
     const lastName = req.query.lastName;
-    const number = req.query.number;
+    const newNumber = req.query.newNumber;
+    const oldNumber = req.query.oldNumber;
     const nameId = req.query.nameId;
 
     let query = " UPDATE names " +
@@ -16,8 +17,9 @@ Router.get("/", (req, res) => {
         " WHERE id = " + nameId + ";" +
 
         " UPDATE phonenumbers " +
-        " SET number = '" + number + "'" +
-        " WHERE name_id = " + nameId + "; ";
+        " SET number = '" + newNumber + "'" +
+        " WHERE name_id = " + nameId +
+        " AND number = " + oldNumber + "; ";
 
     mysqlConnection.query(query, (err, rows, fields) => {
         if (!err) {

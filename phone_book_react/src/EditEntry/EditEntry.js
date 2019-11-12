@@ -39,6 +39,7 @@ class Addentry extends PureComponent {
     }
 
     copyOldEntry = (oldEntry) => {
+        oldEntry.oldPhoneNumber = oldEntry.phoneNumber;
         this.setState({ entry: oldEntry });
     }
 

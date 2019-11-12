@@ -19,7 +19,8 @@ class NodeApi {
         let url = 'http://localhost:3001/update' +
             "?firstName=" + newEntry.firstName +
             "&lastName=" + newEntry.lastName +
-            "&number=" + newEntry.phoneNumber +
+            "&newNumber=" + newEntry.phoneNumber +
+            "&oldNumber=" + newEntry.oldPhoneNumber +
             "&nameId=" + newEntry.nameId;
         return this.fetchData(url);
     }
